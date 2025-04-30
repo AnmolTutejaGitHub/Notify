@@ -25,8 +25,8 @@ if [ $? -eq 0 ]; then
 
     if [ "$result" -eq 1 ]; then
         echo "Login successful"
-        chmod +x  ../CRUD/all_notes.sh
-        ../CRUD/all_notes.sh "$username"
+        chmod +x  ./CRUD/all_notes.sh
+        ./CRUD/all_notes.sh "$username"
     else
         yad --center --title="Error" --text="Invalid credentials" --button=OK
         exit 1
