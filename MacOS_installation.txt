@@ -1,0 +1,12 @@
+yad - very long process
+brew install util-linux // banner library
+brew install mysql
+brew services start mysql
+mysql -u root      
+CREATE USER 'Anmol'@'localhost' IDENTIFIED BY 'Anmol@123';
+mysql -u Anmol -p 
+
+mysql -u root
+GRANT ALL PRIVILEGES ON notesdb.* TO 'Anmol'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;

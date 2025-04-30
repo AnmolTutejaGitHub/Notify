@@ -1,0 +1,5 @@
+# Move db.cnf file to home directory 
+[client]
+user=MYSQL_USERNAME
+password=MYSQL_PASSWORD
+host=localhost
