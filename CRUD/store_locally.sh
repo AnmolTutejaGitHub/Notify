@@ -23,3 +23,5 @@ for row in $result; do
 
     echo "$content" > "$title.txt"
 done
+
+open .
