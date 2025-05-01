@@ -18,6 +18,7 @@ notes_response=$(yad --title="notes" \
     --height=400 \
     --button="New Note:1" \
     --button="logs:2" \
+    --button="store locally:3" \
     --list --column="Notes" "${array[@]}"
    )
 
@@ -35,9 +36,16 @@ if [ "$response" -eq 2 ]; then
     ./Logs/Logs.sh "$username"
 fi 
 
+if [ "$response" -eq 3 ]; then
+    chmod +x  ./CRUD/store_locally.sh
+    ./CRUD/store_locally.sh "$username"
+fi 
+
 if [ "$response" -eq 0 ]; then
     echo 
     note=$(echo "$notes_response" | cut -d'|' -f1)
     chmod +x ./CRUD/note_option.sh
     ./CRUD/note_option.sh "$username" "$note"
 fi
+
+
