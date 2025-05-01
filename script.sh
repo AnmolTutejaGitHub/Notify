@@ -1,8 +1,14 @@
+#!/bin/bash
 banner Notes Manangement System
+
+chmod +x ./create_database.sh
+./create_database.sh
 
 choice=$(yad --width=200 --height=80 \
   --title="Notes Management System" \
+  --text="<b>Auth</b>" \
   --center \
+  --text-align=center \
   --button="Login:1" \
   --button="Create Account:2")
 button_clicked=$?

@@ -34,6 +34,10 @@ if [ "$response" -eq 0 ]; then
        INSERT INTO notes (username, title, content) 
        VALUES ('$username', '$title/$uuid', '$note');
     "
+    mysql --defaults-file=~/.db.cnf -D "$DATABASE" -e "
+       INSERT INTO logs (username, log) 
+       VALUES ('$username', '$title/$uuid is created');
+    "
     chmod +x  ./CRUD/all_notes.sh
     ./CRUD/all_notes.sh "$username"
     echo "Note saved"

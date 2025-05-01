@@ -22,6 +22,10 @@ if [ $? -eq 0 ]; then
         WHERE username='$username' AND title='$title';
     "
     echo "Note updated"
+    mysql --defaults-file=~/.db.cnf -D "$DATABASE" -e "
+       INSERT INTO logs (username, log) 
+       VALUES ('$username', '$title is updated');
+    "
 else
     echo "Cancelled"
 fi

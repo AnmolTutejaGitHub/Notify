@@ -18,6 +18,13 @@ CREATE TABLE IF NOT EXISTS notes (
     title VARCHAR(100),
     content TEXT
 );
+
+CREATE TABLE IF NOT EXISTS logs(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username  VARCHAR(50),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    log TEXT
+)
 "
 
 echo "DONE"

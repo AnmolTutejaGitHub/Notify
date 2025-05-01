@@ -17,6 +17,7 @@ notes_response=$(yad --title="notes" \
     --width=500 \
     --height=400 \
     --button="New Note:1" \
+    --button="logs:2" \
     --list --column="Notes" "${array[@]}"
    )
 
@@ -26,6 +27,12 @@ if [ "$response" -eq 1 ]; then
     echo "create notes"
     chmod +x  ./CRUD/create_notes.sh
     ./CRUD/create_notes.sh "$username"
+fi 
+
+if [ "$response" -eq 2 ]; then
+    echo "logs"
+    chmod +x  ./Logs/Logs.sh
+    ./Logs/Logs.sh "$username"
 fi 
 
 if [ "$response" -eq 0 ]; then

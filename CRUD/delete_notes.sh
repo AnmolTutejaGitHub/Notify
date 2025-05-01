@@ -18,6 +18,10 @@ if [ "$response" -eq 1 ]; then
     mysql --defaults-file=~/.db.cnf -D "$DATABASE" -e "
         DELETE FROM notes WHERE username='$username' AND title='$title';
     "
+    mysql --defaults-file=~/.db.cnf -D "$DATABASE" -e "
+       INSERT INTO logs (username, log) 
+       VALUES ('$username', '$title is deleted');
+    "
     echo "Note deleted."
     chmod +x  ./CRUD/all_notes.sh
     ./CRUD/all_notes.sh "$username"

@@ -8,6 +8,13 @@ result=$(mysql --defaults-file=~/.db.cnf -D "$DATABASE" -N -s -e "
     SELECT content FROM notes WHERE username='$username' AND title='$title';
 ")
 
+mysql --defaults-file=~/.db.cnf -D "$DATABASE" -e "
+       INSERT INTO logs (username, log) 
+       VALUES ('$username', '$title is read');
+    "
+
+
+
 yad --text-info \
     --title="$title" \
     --width=500 \
