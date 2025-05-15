@@ -4,3 +4,4 @@ sudo apt install -y yad
 sudo apt install sysvbanner
 sudo apt install mysql-server
 sudo apt install uuid-runtime
+sudo apt install figlet
